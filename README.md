@@ -4,6 +4,9 @@
 ### Control synthesis of robotic systems from prioritized reactive LTL specification
 #### Yihan Zhu
 
+
+Open .gif files for quick animated results.
+
 Run 'swarm.m' file for swarm robots simulation
 
 Run 'single_bot.m' file for single robot, 'single_bot_fast_response.m' for single robot with instantaneous responds to inputs.
