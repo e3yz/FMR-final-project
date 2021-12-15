@@ -1,0 +1,38 @@
+[INPUT]
+a
+d
+
+
+[OUTPUT]
+r0
+r1
+r2
+
+
+[ENV_TRANS]
+| ! d d'
+
+
+[ENV_INIT]
+! a
+! d
+
+
+[SYS_TRANS]
+| ! r0 | r0' r1'
+| ! r1 | | r0' r1' r2'
+| ! r2 | r1' r2'
+| | & & r0 ! r1 ! r2 & & ! r0 r1 ! r2 & & ! r0 ! r1 r2
+
+
+
+[SYS_INIT]
+r1
+
+
+
+[SYS_LIVENESS]
+| ! & a ! d r2
+| ! d r0
+
+

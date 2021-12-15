@@ -1,0 +1,45 @@
+[INPUT]
+alarm
+danger
+
+[OUTPUT]
+r0
+r1
+r2
+
+[ENV_INIT]
+! alarm
+! danger
+
+[ENV_TRANS]
+1
+
+[ENV_LIVENESS]
+1
+
+[SYS_INIT]
+r1
+
+[SYS_TRANS]
+r1 -> (r1' | (r1'& r0') | (r1' & r2'))
+r0 -> (r0' | (r0' & r1'))
+r2 -> (r2' | (r1'& r2'))
+(r1 & r0) -> (r1' | r0')
+(r1 & r2) -> (r1' | r2')
+
+((r0 | r1) & ! r2) | ((r1 | r2) & ! r0)
+
+[SYS_LIVENESS]
+(alarm & !danger) -> r2
+danger -> r0
+
+
+
+
+
+
+
+
+
+
+
